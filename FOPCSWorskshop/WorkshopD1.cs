@@ -12,14 +12,14 @@ namespace FOPCSWorskshop
         public static void Main()
         {
             bool compare = true;
-            int input = 88;
+            int input = 0;
             int luckynum = 88;
 
             while (compare)
             {
                 Console.Write("Please input a number: ");
                 input = Convert.ToInt32(Console.ReadLine());
-
+            
                 if (input == luckynum)
                 {
                     Console.WriteLine("Lucky you...");
