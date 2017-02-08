@@ -17,13 +17,21 @@ namespace FOPCSWorskshop
             Console.WriteLine("Good Morning, {0}", name);
 
             int a = 10;
-            Console.WriteLine(Math.Pow(a,2);
+            Console.WriteLine(Math.Pow(a,2));
 
             double b = 44.98;
-            Console.WriteLine(Math.Pow(b, 2);
+            Console.WriteLine(Math.Pow(b, 2));
 
-            double c = 16.8123;
+            double c = 100.1;
             Console.WriteLine("{0:0.00}",c);
+            double c1 = 0;
+            Console.WriteLine("{0:0.00}", c1);
+            double c2 = 3.232;
+            Console.WriteLine("{0:0.00}", c2);
+            double c3 = 4.555;
+            Console.WriteLine("{0:0.00}", c3);
+
+
         }
     }
 }
