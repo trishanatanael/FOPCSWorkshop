@@ -11,7 +11,7 @@ namespace FOPCSWorskshop
     {
         public static void Main()
         {
-            int myIntA, myIntB, fact, lcm;
+            int myIntA, myIntB, fact, lcmA, lcmB;
             string myInputA, myInputB;
 
             Console.Write("Please enter a number for variable A: ");
@@ -30,15 +30,22 @@ namespace FOPCSWorskshop
                 {
                     Console.WriteLine("B is bigger than A");
                     myIntB = myIntB - myIntA;
+                    lcmB = fact / myIntA;
+                    while (myIntA == myIntB)
+                    Console.WriteLine("The HCF is {0}", myIntA);
+                    Console.WriteLine("The LCM is {0}", lcmB);
                 }
                 else
                 {
                     Console.WriteLine("A is bigger than B");
                     myIntA = myIntA - myIntB;
+                    lcmA = fact / myIntB;
+                    Console.WriteLine("The HCF is {0}", myIntA);
+                    Console.WriteLine("The LCM is {0}", lcmA);
+                 
                 }
             }
-            lcm = fact / myIntA;
-            Console.WriteLine("The LCM is {0}", lcm);
+            
         }
     }
 }
