@@ -8,28 +8,38 @@ namespace FOPCSWorskshop
 {
     class WorkshopD4
     {
+       
         public static void Main()
         {
-            Console.WriteLine("Please input a number: ");
-            //input=N
-            int N = Convert.ToInt32(Console.ReadLine());
-            Random randNum = new Random();
-            double G = randNum.Next(1, N);
-            Console.WriteLine(G);
-            // how to create random number from 1 to n?
-            double guess = G * G;
-            double difference = 1;
-            if (difference >0)
-            {
-                Console.WriteLine(guess);
-            }
-            else
-            {
-                G = (G + N / G) / 2;
-                Console.WriteLine("Try again");
-                Console.WriteLine(G);
+            string input = "";
+            double n = 0.0, guess = 0.0;
+            Random random = new Random();
 
+            Console.Write("Please enter a number: ");
+            input = Console.ReadLine();
+            Double.TryParse(input, out n);
+
+            if (n == 0)
+            {
+                Console.WriteLine("The sqrt of {0} is 0.000", n);
+                return;
             }
+
+             guess = random.NextDouble() * n;// random will never go beyond n and lower than 0
+
+            if (guess * guess != n)
+            {
+                guess = (guess + (n / guess)) / 2;
+
+                while (n - guess * guess >= 0.00001 || guess * guess - n >= 0.00001)
+                {
+                    guess = (guess + (n / guess)) / 2;
+                }
+            }
+
+            Console.WriteLine("The sqrt of {0} is {1:0.###}\n", n, guess);
+
+            return;
 
         }
     }
