@@ -6,26 +6,22 @@ using System.Threading.Tasks;
 
 namespace FOPCSWorskshop
 {
-    class WorkshopE1
+    class WorkshopE1b
 
     {
         public static void Main()
         {
-            string input;
             int i=1, numberOut = 1;
-
+            //dont put the input in the loop. only use it as the initalizer or expression
             Console.Write("Please enter a number: ");
-            input = Console.ReadLine();
-            Int32.TryParse(input, out numberOut);
+            int input = Convert.ToInt32(Console.ReadLine());
 
-            for (i = 1; i <numberOut; i++)
+            for (i = input; i > 0; i--)
             {
                 numberOut = i * numberOut;
             }
-
-           
-
-
+            Console.WriteLine(numberOut);
+            return;
         }
     }
 }
