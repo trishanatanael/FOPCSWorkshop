@@ -23,14 +23,17 @@ namespace FOPCSWorskshop
             else if (0.5 < totaldistance && totaldistance <= 9)
             {
                 double to85meters = (totaldistance - 0.5)*100;
-                double dollarroundup= Math.Ceiling(to85meters)/10*0.04;
+                //convert to every 4 cents/ dm , return back to km. currency are in dime so divide again by 10
+                double dollarroundup= Math.Ceiling(to85meters)*0.04/10;
                 double charge9 = (charge05 + dollarroundup);
                 Console.WriteLine("${0:0.0}", charge9);
             }
             else if (totaldistance > 9)
             {
-                double over9 = (totaldistance - 9)*100;
-                double dollarroundup9 = Math.Ceiling(over9)/10*0.05;
+                // move the decimal 2 to the right 
+                double over9 = (totaldistance - 9)*10;
+                // ceiling it up
+                double dollarroundup9 = Math.Ceiling(over9)*0.05;
                 double chargeover9 = 5.80+dollarroundup9; 
                 Console.WriteLine("${0:0.0}", chargeover9);
 
