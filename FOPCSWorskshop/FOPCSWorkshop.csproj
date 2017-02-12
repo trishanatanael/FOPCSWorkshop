@@ -48,7 +48,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>FOPCSWorskshop.WorkshopE3</StartupObject>
+    <StartupObject>FOPCSWorskshop.WorkshopE4</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
