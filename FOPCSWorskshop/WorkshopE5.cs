@@ -11,31 +11,29 @@ namespace FOPCSWorskshop
     {
         public static void Main()
         {
-            string[] salesMonth = new string[12] {"January","February","March",
-                                               "April","May","June","July",
-                                               "August","September","October",
-                                               "November","December"};
-            //12 rows of staements
-            int[] salesInfo = new int[12] { 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21};
-            int i=0;
-            double totalSales;
-            double aveSales;
-            for (i = 0; i < 12; i++)
+            //Modify the Prime Number C# program to print out all the prime numbers from 5 to 10000
+           
+            
+            bool isPrime = true;
+            Console.WriteLine("Prime number from 1-10000:");
+
+            for (int j = 1; j < 10000; j++)
             {
-                Console.WriteLine("{0} \t\t\t {1}", salesMonth[i], salesInfo[i]);
+                isPrime = true;
+                for (int i = 2; i < j; i++)
+                {
+                    if (j % i == 0)
+                    {
+                        isPrime = false;
+                        break;
+
+                    }
+                }
+                if (isPrime)
+                    Console.WriteLine("{0}", j);
 
             }
-            totalSales = salesInfo.Sum();
-            Console.WriteLine(totalSales);
-
-            int maxSales = salesInfo.Max();
-            Console.WriteLine("Max sales is {0}", maxSales);
-
-            int minSales = salesInfo.Min();
-            Console.WriteLine("Min sales is {0}", minSales);
-
-            aveSales = Convert.ToDouble(totalSales /i);
-            Console.WriteLine("Average sales this year is {0}", aveSales);
+            return;
 
         }
     }

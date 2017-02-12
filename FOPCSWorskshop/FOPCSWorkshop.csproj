@@ -48,7 +48,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>FOPCSWorskshop.WorkshopE4</StartupObject>
+    <StartupObject>FOPCSWorskshop.WorkshopE6</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -68,6 +68,7 @@
     <Compile Include="WorkshopD3b.cs" />
     <Compile Include="WorkshopD3a.cs" />
     <Compile Include="WorkshopE3.cs" />
+    <Compile Include="WorkshopE6tcn.cs" />
     <Compile Include="WorkshopE6.cs" />
     <Compile Include="WorkshopE5.cs" />
     <Compile Include="WorkshopE4.cs" />
