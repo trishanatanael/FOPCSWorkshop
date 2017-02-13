@@ -9,46 +9,29 @@ namespace FOPCSWorskshop
     using System;
     class test
     {
-        public static void Main()
+        public static bool IsPalindrome(string value)
         {
-            string input;
-            int cA = 0, cE = 0, cI = 0, cO = 0, cU = 0;
-            int cTotal;
-            //Console.WriteLine('a' - 'A');
-
-            Console.Write("Please enter a line: ");
-            input = Console.ReadLine();
-
-            for (int i = 0; i < input.Length; i++)
+            value = Console.ReadLine();
+            int min = 0;
+            int max = value.Length - 1;
+            while (true)
             {
-                if (input[i] == 'A' || input[i] == 'a')
+                if (min > max)
                 {
-                    cA++;
+                    return true;
                 }
-                else if (input[i] == 'E' || input[i] == 'e')
+                char a = value[min];
+                char b = value[max];
+                if (char.ToLower(a) != char.ToLower(b))
                 {
-                    cE++;
+                    return false;
                 }
-                else if (input[i] == 'I' || input[i] == 'i')
-                {
-                    cI++;
-                }
-                else if (input[i] == 'O' || input[i] == 'o')
-                {
-                    cO++;
-                }
-                else if (input[i] == 'U' || input[i] == 'u')
-                {
-                    cU++;
-                }
+                min++;
+                max--;
             }
-
-            cTotal = cA + cE + cI + cO + cU;
-
-            Console.WriteLine("Total vowels: {0}\nA: {1}\nE: {2}\nI: {3}\nO: {4}\nU: {5}", cTotal, cA, cE, cI, cO, cU);
-
-            return;
-
+            
         }
+
     }
 }
+
