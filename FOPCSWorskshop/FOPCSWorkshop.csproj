@@ -61,6 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="WorkshopH4.cs" />
     <Compile Include="WorkshopH3.cs" />
     <Compile Include="WorkshopH2.cs" />
     <Compile Include="WorkshopH1.cs" />

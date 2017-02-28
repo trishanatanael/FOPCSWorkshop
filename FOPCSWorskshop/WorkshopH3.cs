@@ -23,51 +23,51 @@ namespace FOPCSWorskshop
         }*/
         static string Hex(int num1)
         {
-            double a = Convert.ToDouble(num1);
-            double div = a;
-            double remainder = a;
-            string conversion = "";
+            double num2 = Convert.ToDouble(num1);
+            double div = num2;
+            double rem = num2;
+            string hexconversion = "";
 
             while (div >= 16)
             {
-                remainder = div % 16;
+                rem = div % 16;
                 div = div / 16;
                 div = Math.Floor(div);
 
-                if (remainder == 0)
-                    conversion = "0" + conversion;
-                if (remainder == 1)
-                    conversion = "1" + conversion;
-                if (remainder == 2)
-                    conversion = "2" + conversion;
-                if (remainder == 3)
-                    conversion = "3" + conversion;
-                if (remainder == 4)
-                    conversion = "4" + conversion;
-                if (remainder == 5)
-                    conversion = "5" + conversion;
-                if (remainder == 6)
-                    conversion = "6" + conversion;
-                if (remainder == 7)
-                    conversion = "7" + conversion;
-                if (remainder == 8)
-                    conversion = "8" + conversion;
-                if (remainder == 9)
-                    conversion = "9" + conversion;
-                if (remainder == 10)
-                    conversion = "A" + conversion;
-                if (remainder == 11)
-                    conversion = "B" + conversion;
-                if (remainder == 12)
-                    conversion = "C" + conversion;
-                if (remainder == 13)
-                    conversion = "D" + conversion;
-                if (remainder == 14)
-                    conversion = "E" + conversion;
-                if (remainder == 15)
-                    conversion = "F" + conversion;
+                if (rem == 0)
+                    hexconversion = "0" + hexconversion;
+                if (rem == 1)
+                    hexconversion = "1" + hexconversion;
+                if (rem == 2)
+                    hexconversion = "2" + hexconversion;
+                if (rem == 3)
+                    hexconversion = "3" + hexconversion;
+                if (rem == 4)
+                    hexconversion = "4" + hexconversion;
+                if (rem == 5)
+                    hexconversion = "5" + hexconversion;
+                if (rem == 6)
+                    hexconversion = "6" + hexconversion;
+                if (rem == 7)
+                    hexconversion = "7" + hexconversion;
+                if (rem == 8)
+                    hexconversion = "8" + hexconversion;
+                if (rem == 9)
+                    hexconversion = "9" + hexconversion;
+                if (rem == 10)
+                    hexconversion = "A" + hexconversion;
+                if (rem == 11)
+                    hexconversion = "B" + hexconversion;
+                if (rem == 12)
+                    hexconversion = "C" + hexconversion;
+                if (rem == 13)
+                    hexconversion = "D" + hexconversion;
+                if (rem == 14)
+                    hexconversion = "E" + hexconversion;
+                if (rem == 15)
+                    hexconversion = "F" + hexconversion;
             }
-            return div + conversion;
+            return div + hexconversion;
         }
 
     }
