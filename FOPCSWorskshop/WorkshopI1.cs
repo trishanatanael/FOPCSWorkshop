@@ -26,9 +26,16 @@ your luck – but don’t loose money!*/
             Console.WriteLine("Please enter amount: ");
 
             string inputAmount = Console.ReadLine();
+            bool iCond = inputAmount.Length == 3;
             double inputCheck = double.Parse(inputAmount);
 
-            if(inputCheck > 0.05 && inputCheck <= 3.50)
+            if (iCond)
+            {
+                inputAmount= inputAmount+ 0.01;
+            }
+
+            if (inputCheck >= 0.05 && inputCheck <= 3.50)
+
                 minCoinsOut(inputAmount);
             else
                 Console.WriteLine("Please enter amount between 0.05 to 3.50");
@@ -37,6 +44,7 @@ your luck – but don’t loose money!*/
         {
             int firstDigit = 0;
             int bhdDot = 0;
+            int fifthyC = 0 , twentyC = 0, fiveC = 0;
 
             if (input.Length == 1)
                 firstDigit = int.Parse(input);
@@ -44,10 +52,36 @@ your luck – but don’t loose money!*/
             {
                 int.TryParse(input.Split('.')[0], out firstDigit);
                 int.TryParse(input.Split('.')[1], out bhdDot);
+                bhdDot = (int)Math.Round(bhdDot / 5.0) * 5; //interesting method. need to note
             }
 
-            Console.WriteLine(firstDigit);
-            Console.WriteLine(bhdDot);
+            if (bhdDot != 0)
+            {
+                while (bhdDot >= 50)
+                {
+                    bhdDot = bhdDot - 50;
+                    fifthyC++;
+                }
+                while (bhdDot >= 20)
+                {
+                    bhdDot = bhdDot - 20;
+                    twentyC++;
+                }
+                while (bhdDot >= 5)
+                {
+                    bhdDot = bhdDot - 5;
+                    fiveC++;
+                }
+            }
+            else
+            {
+                fifthyC = 0;
+                twentyC = 0;
+                fiveC = 0;
+            }
+
+            Console.WriteLine("Issue ({0}) 100-cent coin, ({1}) 50-cent coin, ({2}) 20-cent coins and ({3}) 5-cent coin", firstDigit,fifthyC,twentyC,fiveC);
+
             //The trick is to always start with the largest denomination and slowly go down.
             //output: “minimum - number - of - coins”
         }
