@@ -10,9 +10,7 @@ namespace FOPCSWorskshop
     {
         public static void Main()
         {
-            /*Write a program for the following:
-            a.Declare an array of dimension 10(index 0… 9).
-            b.Generate 50 Random integers in the range 0 … 9.
+            /*
             c.Store the number of occurrences (count) in the array appropriately.
             d.Print a table that would list the numbers and the number of occurrences.
             Addition:
@@ -20,19 +18,32 @@ namespace FOPCSWorskshop
             -How would the program be affected if the range of numbers
             randomly generated is between - 5 and + 5 ?*/
 
-            //int[] number = new int[10];
-            int[] output = new int[50];
-            Random random = new Random();
-            int inArr = 0;
-            for (int i = 0; i < output.Length; i++)
+            int[] numberArr = new int[10];
+            int inside = 0;
+            Random randomNo = new Random();
+           
+
+            Console.WriteLine("Number\t\tOutput");
+            for (int i = 0; i < 50; i++)
             {   
-                inArr = random.Next(0, 10);
-                output[inArr]++;
+                inside = randomNo.Next(0, 10);//Next(min,max value -1)
+                numberArr[inside]++;
+               
             }
-            for (int j = 0; j < output.Length; j++)
+            for (int j = 0; j < 10; j++)
             {
-                Console.WriteLine("{0}",output[j]);
+                Console.Write("{0}\t\t", numberArr[j]);
+                for (int k = 0; k < numberArr[j]; k++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
             }
+
+
+
+
+
         }
     }
 }
