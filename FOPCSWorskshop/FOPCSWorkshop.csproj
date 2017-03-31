@@ -48,7 +48,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>FOPCSWorskshop.WorkshopI2</StartupObject>
+    <StartupObject>FOPCSWorskshop.BizCase1</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -61,6 +61,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BizCase1.cs" />
+    <Compile Include="BizCase2.cs" />
     <Compile Include="WorkshopI2.cs" />
     <Compile Include="WorkshopI1.cs" />
     <Compile Include="WorkshopH4Char.cs" />
@@ -101,7 +103,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
