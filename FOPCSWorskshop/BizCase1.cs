@@ -26,11 +26,13 @@ namespace FOPCSWorskshop
         {
             Console.WriteLine("Please enter the amount ($$$$.¢¢): ");
             string input = Console.ReadLine();
+            double doubInput = Convert.ToDouble(input);
+
             string dollars = "";
             string cents = "";
             string outputDol = "";
             string outputCent = "";
-            double doubInput = Convert.ToDouble(input);
+            
             int firstD = 0;
             int secondD = 0;
             int thirdD = 0;
@@ -40,7 +42,8 @@ namespace FOPCSWorskshop
             int intDollars = 0;
             int intCents = 0;
             bool boolCent;
-       
+            outputCent = " Only";
+            //bool boolDol;
 
             //splitting the . and if boolcent = true
             if (input.Contains('.'))
@@ -49,6 +52,7 @@ namespace FOPCSWorskshop
                 dollars += digits[0];
                 cents += digits[1];
                 boolCent = true;
+                //boolDol = true;
                 getDolLength += dollars.Length;
                 getCentLength += cents.Length;
                 intDollars += Convert.ToInt32(dollars);
@@ -56,20 +60,22 @@ namespace FOPCSWorskshop
             }
             else
             {
-                dollars += Convert.ToInt32(input);
+                dollars += input;
+                outputCent += " Only";
                 boolCent = false;
                 getDolLength += dollars.Length;
                 intDollars += Convert.ToInt32(dollars);
             }
 
             //for dollars
-            if (getDolLength > 0 && doubInput<10000)
+            if (getDolLength > 0 && doubInput < 10000)
             {
                 if (getDolLength == 1)
                 {
                     string[] nineD = new string[] { "Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine" };
                     fourthD += intDollars;
                     outputDol += nineD[fourthD];
+                    Console.WriteLine(outputDol);
                     return;
                 }
                 else if (getDolLength == 2)
@@ -79,7 +85,7 @@ namespace FOPCSWorskshop
                         string[] teen = new string[] { "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen" };
                         fourthD = Convert.ToInt32(dollars.Substring(1, 1));
                         outputDol += teen[fourthD];
-                        Console.WriteLine("5");
+                        Console.WriteLine(outputDol);
                         return;
                     }
                     else
@@ -88,55 +94,54 @@ namespace FOPCSWorskshop
                         string[] nineD = new string[] { "", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine" };
                         thirdD = Convert.ToInt32(dollars.Substring(0, 1));
                         fourthD = Convert.ToInt32(dollars.Substring(1, 1));
-                        outputDol += ty[thirdD - 2] + nineD[fourthD];
-                        Console.WriteLine("6");
+                        outputDol += ty[thirdD - 2] + " "+ nineD[fourthD];
+                        Console.WriteLine(outputDol);
                         return;
                     }
                 }
                 else if (getDolLength == 3)
                 {
-                    string[] ty = new string[] { "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety" };
-                    string[] teen = new string[] { "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen" };
+                    string[] ty = new string[] { "","Ten","Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety" };
+                    string[] teen = new string[] { "", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen" };
                     string[] nineD = new string[] { "", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine" };
                     secondD = Convert.ToInt32(dollars.Substring(0, 1));
                     thirdD = Convert.ToInt32(dollars.Substring(1, 1));
                     fourthD = Convert.ToInt32(dollars.Substring(2, 1));
                     if (thirdD == 1)
                     {
-                        outputDol += nineD[firstD] + " thousand " + nineD[secondD] + " hundred " + teen[fourthD];
-                        Console.WriteLine("9a");
+                        outputDol += nineD[secondD] + " Hundred and " + teen[fourthD];
+                        Console.WriteLine(outputDol);
                         return;
                     }
                     else
                     {
-                        outputDol += nineD[firstD] + " thousand " + nineD[secondD] + " hundred " + ty[thirdD] + " " + nineD[fourthD];
+                        outputDol += nineD[secondD] + " Hundred and " + ty[thirdD] + " " + nineD[fourthD];
                         Console.WriteLine(outputDol);
-                        Console.WriteLine("10b");
                         return;
                     }
                 }
                else
                 {
-                    string[] ty = new string[] { "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety" };
+                    string[] ty = new string[] { "","Ten","Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety" };
                     string[] teen = new string[] { "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen" };
                     string[] nineD = new string[] { "", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine" };
                     firstD = Convert.ToInt32(dollars.Substring(0, 1));
                     secondD = Convert.ToInt32(dollars.Substring(1, 1));
                     thirdD = Convert.ToInt32(dollars.Substring(2, 1));
                     fourthD = Convert.ToInt32(dollars.Substring(3, 1));
-                    Console.WriteLine("8");
                     if (thirdD == 1)
                     {
-                        outputDol += nineD[firstD] + " thousand " + nineD[secondD] + " hundred " + teen[fourthD];
-                        Console.WriteLine("9");
+                        outputDol += nineD[firstD] + " Thousand " + nineD[secondD] + " Hundred and " +teen[fourthD];
+                        Console.WriteLine(outputDol);
                         return;
                     }
                     else
                     {
-                        outputDol += nineD[firstD] + " thousand " + nineD[secondD] + " hundred " + ty[thirdD] + " " + nineD[fourthD];
-                        Console.WriteLine("10");
+                        outputDol += nineD[firstD] + " Thousand " + nineD[secondD] + " Hundred and " + ty[thirdD] + " " + nineD[fourthD];
+                        Console.WriteLine(outputDol);
                         return;
                     }
+               
                 }
             }
 
@@ -149,7 +154,7 @@ namespace FOPCSWorskshop
                 {
                     string[] cen = new string[] { "Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine" };
                     outputCent += " And " + cen[firstC] + " Only";
-                    Console.WriteLine("11");
+                    Console.WriteLine(outputCent);
                     return;
                 }
                 else if (firstC == 1)
@@ -157,7 +162,7 @@ namespace FOPCSWorskshop
                     string[] cen = new string[] { "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen" };
                     int secondC = Convert.ToInt32(cents.Substring(1, 1));
                     outputCent += " And " + cen[secondC] + " Only";
-                    Console.WriteLine("12");
+                    Console.WriteLine(outputCent);
                     return;
                 }
                 else
@@ -166,6 +171,7 @@ namespace FOPCSWorskshop
                     string[] cen = new string[] { "Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine" };
                     int secondC = Convert.ToInt32(cents.Substring(1, 1));
                     outputCent += " And " + cenTy[firstC] + " " + cen[secondC] + " Only";
+                    Console.WriteLine(outputCent);
                     return;
                 }
                 
@@ -173,9 +179,9 @@ namespace FOPCSWorskshop
             else
             {
                 outputCent += " Only";
-                Console.WriteLine("14");
             }
-
+            outputCent += " Only";
+            Console.WriteLine(outputCent);
             Console.WriteLine("{0} {1}",outputDol, outputCent);
 
         }
